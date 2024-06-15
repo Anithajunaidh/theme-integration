@@ -1,0 +1,82 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* @layer base {
+  :root {
+    --color-text-base: 255, 255, 255;
+    --color-text-muted: 199, 210, 254;
+    --color-text-inverted: 79, 70, 229;
+    --color-fill: 67, 56, 202;
+    --color-button-accent: 255, 255, 255;
+    --color-button-accent-hover: 238, 242, 255;
+    --color-button-muted: 99, 102, 241;
+  }
+  .theme-swiss {
+    --color-text-base: 255, 255, 255;
+    --color-text-muted: 254, 202, 202;
+    --color-text-inverted: 220, 38, 38;
+    --color-fill: 185, 28, 28;
+    --color-button-accent: 255, 255, 255;
+    --color-button-accent-hover: 254, 242, 242;
+    --color-button-muted: 239, 68, 68;
+  }
+  .theme-neon {
+    --color-text-base: 17, 24, 2;
+    --color-text-muted: 47, 67, 6;
+    --color-text-inverted: 235, 250, 204;
+    --color-fill: 179, 255, 23;
+    --color-button-accent: 36, 52, 3;
+    --color-button-accent-hover: 55, 79, 5;
+    --color-button-muted: 212, 255, 122;
+  }
+} */
+
+:root {
+    --background: theme('colors.white');
+    --background-secondary: theme('colors.gray.50');
+    --foreground: theme('colors.emerald.900');
+    --primary-dark: theme('colors.gray.900');
+    --primary-medium: theme('colors.gray.700');
+    --primary-light: theme('colors.gray.500');
+  }
+  
+  [data-theme='dark'] {
+    --background: theme('colors.black');
+    --background-secondary: theme('colors.gray.800');
+    --foreground:theme('colors.fuchsia.900');
+    --accent-dark: theme('colors.fuchsia.900');
+    --accent-medium: theme('colors.fuchsia.700');
+    --accent-light: theme('colors.fuchsia.500');
+  
+    --primary-dark: theme('colors.gray.300');
+    --primary-medium: theme('colors.gray.200');
+    --primary-light: theme('colors.gray.100');
+  }
+  
+  [data-theme='emerald'] {
+    /* --background: theme('colors.white'); */
+    --background: theme('colors.emerald.700');
+    --accent-dark: theme('colors.emerald.900');
+    --accent-medium: theme('colors.emerald.700');
+    --accent-light: theme('colors.emerald.500');
+    --primary-dark: theme('colors.gray.300');
+    --primary-medium: theme('colors.gray.200');
+    --primary-light: theme('colors.gray.100');
+    --foreground: theme('colors.gray.700');
+  }
+  
+  [data-theme='pink'] {
+    /* --background: theme('colors.gray.900'); */
+    --background: theme('colors.pink.900');
+    --background-secondary: theme('colors.gray.800');
+  
+    --accent-dark: theme('colors.pink.900');
+    --accent-medium: theme('colors.pink.700');
+    --accent-light: theme('colors.pink.500');
+  
+    --primary-dark: theme('colors.gray.300');
+    --primary-medium: theme('colors.gray.200');
+    --primary-light: theme('colors.gray.100');
+    --foreground:theme('colors.gray.700');
+  }
