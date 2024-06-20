@@ -2,38 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-/* @layer base {
-  :root {
-    --color-text-base: 255, 255, 255;
-    --color-text-muted: 199, 210, 254;
-    --color-text-inverted: 79, 70, 229;
-    --color-fill: 67, 56, 202;
-    --color-button-accent: 255, 255, 255;
-    --color-button-accent-hover: 238, 242, 255;
-    --color-button-muted: 99, 102, 241;
-  }
-  .theme-swiss {
-    --color-text-base: 255, 255, 255;
-    --color-text-muted: 254, 202, 202;
-    --color-text-inverted: 220, 38, 38;
-    --color-fill: 185, 28, 28;
-    --color-button-accent: 255, 255, 255;
-    --color-button-accent-hover: 254, 242, 242;
-    --color-button-muted: 239, 68, 68;
-  }
-  .theme-neon {
-    --color-text-base: 17, 24, 2;
-    --color-text-muted: 47, 67, 6;
-    --color-text-inverted: 235, 250, 204;
-    --color-fill: 179, 255, 23;
-    --color-button-accent: 36, 52, 3;
-    --color-button-accent-hover: 55, 79, 5;
-    --color-button-muted: 212, 255, 122;
-  }
-} */
-
-:root {
-    --background: theme('colors.white');
+/* :root {
     --background-secondary: theme('colors.gray.50');
     --foreground: theme('colors.emerald.900');
     --primary-dark: theme('colors.gray.900');
@@ -42,7 +11,8 @@
   }
   
   [data-theme='dark'] {
-    --background: theme('colors.black');
+    /* --background: theme('colors.black'); */
+    /* --background: ${colors.black-light};
     --background-secondary: theme('colors.gray.800');
     --foreground:theme('colors.fuchsia.900');
     --accent-dark: theme('colors.fuchsia.900');
@@ -52,11 +22,11 @@
     --primary-dark: theme('colors.gray.300');
     --primary-medium: theme('colors.gray.200');
     --primary-light: theme('colors.gray.100');
-  }
+  } */
   
-  [data-theme='emerald'] {
+  /* [data-theme='emerald'] { */
     /* --background: theme('colors.white'); */
-    --background: theme('colors.emerald.700');
+    /* --background: theme('colors.emerald.700');
     --accent-dark: theme('colors.emerald.900');
     --accent-medium: theme('colors.emerald.700');
     --accent-light: theme('colors.emerald.500');
@@ -64,11 +34,11 @@
     --primary-medium: theme('colors.gray.200');
     --primary-light: theme('colors.gray.100');
     --foreground: theme('colors.gray.700');
-  }
+  } */
   
-  [data-theme='pink'] {
+  /* [data-theme='pink'] { */
     /* --background: theme('colors.gray.900'); */
-    --background: theme('colors.pink.900');
+    /* --background: theme('colors.pink.900');
     --background-secondary: theme('colors.gray.800');
   
     --accent-dark: theme('colors.pink.900');
@@ -79,4 +49,51 @@
     --primary-medium: theme('colors.gray.200');
     --primary-light: theme('colors.gray.100');
     --foreground:theme('colors.gray.700');
+  }  */
+
+  :root {
+    --background: theme(colors.primary-light); /* Assuming you have a primary-light color token */
+    --background-secondary: theme(colors.primary-light);
+    --foreground: theme(colors.black);
+    --primary-dark: theme(colors.black);
+    --primary-medium: theme(colors.black-light);
+    --primary-light: theme(colors.white-dark);
+  }
+  
+  [data-theme='dark'] {
+    --background: theme(colors.black-light);
+    --background-secondary: theme(colors.primary);
+    --foreground: theme(colors.white);
+    --accent-dark: theme(colors.error);
+    --accent-medium: theme(colors.warning);
+    --accent-light: theme(colors.info);
+  
+    /* --primary-dark: theme(colors.primary-dark);
+    --primary-medium: theme(colors.primary-medium); */
+    --primary-light: theme(colors.primary-light);
+  }
+  
+  [data-theme='emerald'] {
+    --background: theme(colors.primary-light);
+    --accent-dark: theme(colors.primary);
+    --accent-medium: theme(colors.black);
+    --accent-light: theme(colors.black-light);
+    --primary-dark: theme(colors.white);
+    --primary-medium: theme(colors.white-dark);
+    --primary-light: theme(colors.error);
+    --foreground: theme(colors.warning);
+  }
+  
+  [data-theme='pink'] {
+    --background: theme(colors.error);
+    --background-secondary: theme(colors.warning);
+  
+    --accent-dark: theme(colors.info);
+    --accent-medium: theme(colors.primary);
+    --accent-light: theme(colors.primary-light);
+  
+    --primary-dark: theme(colors.black);
+    --primary-medium: theme(colors.black-light);
+    --primary-light: theme(colors.white);
+    --foreground: theme(colors.white-dark);
   }

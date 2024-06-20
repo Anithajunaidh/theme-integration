@@ -56,12 +56,12 @@ tl.fromTo(".job-title",{
     }
   return (
     <Bounded ref={container}>
-    <div  className='grid min-h-[70vh] cols-1 md:grid-cols-2 items-center p-'>
+    <div  className='grid min-h-[70vh] cols-1 md:grid-cols-2 items-center'>
        <Shapes/>
         <div className='col-start-1 md:row-start-1'>
        <div className=' mb-8 text-[clamp(3rem,15vmin,20rem)] font-extrabold leading-none tracking-tighter' >
         {/* <div className='text-slate-300'> */}
-        <div className='text-error'>
+        <div className='text-primary'>
           {renderLetters('Andy','first')}
           </div>
         <div className='-mt-[.2rem] text-th-foreground'>
