@@ -1,4 +1,3 @@
-import typographyTokens from "./design-tokens/typography";
 
 export interface TokenAttributes {
   category: string;
@@ -23,7 +22,7 @@ export interface Tokens {
 }
 
 //module.exports = {
-  export const tokens = {
+export const tokens = {
   "color": {
     "primary": {
       "value": "#3a4d7e",
@@ -41,7 +40,7 @@ export interface Tokens {
         "color",
         "primary"
       ]
-      },
+    },
     "primary_light": {
       "value": "#b9c4df",
       "type": "color",
@@ -181,7 +180,7 @@ export interface Tokens {
   },
 
   //spacing tokens
-  
+
   "spacing": {
     "spacing_small": {
       "value": "4px",
@@ -392,7 +391,6 @@ export interface Tokens {
     },
     // Add more screens as needed
   },
-  typography: typographyTokens,
 };
 
 // export interface IColor {

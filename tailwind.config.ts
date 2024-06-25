@@ -1,20 +1,19 @@
 
 const kebabcase = require('lodash.kebabcase');
-//const tokens = require('./src/components/theme/tokens');
-import { tokens } from './src/components/theme/tokens';
+import { tokens } from "./src/components/theme/deisgn-tokens";
 import type { Config } from "tailwindcss";
 
-const transformTokens = (tokenObject: Record<string, any>, category: string) => {
-  return Object.values(tokenObject).reduce((acc, token) => {
-    acc[kebabcase(token.attributes.type)] = token.value;
+const transformTokens = (tokenObject: Record<string, any>): Record<string, any> => {
+  return Object.keys(tokenObject).reduce((acc: Record<string, any>, key: string) => {
+    acc[kebabcase(key)] = tokenObject[key].value;
     return acc;
-  }, {});
+  }, {} as Record<string, any>);
 };
 
-const colors = transformTokens(tokens.color, 'color');
-const spacing = transformTokens(tokens.spacing, 'spacing');
-const screens=transformTokens(tokens.screens,'screens');
-const typography = transformTokens(tokens.typography, 'typography');
+const colors = transformTokens(tokens.color);
+const spacing = transformTokens(tokens.spacing);
+const screens = transformTokens(tokens.screens);
+const typography = transformTokens(tokens.typography);
 
 const config: Config = {
   content: [
@@ -26,10 +25,10 @@ const config: Config = {
     spacing: {
       ...spacing
     },
-    colors:{
+    colors: {
       ...colors,
     },
-    screens:{
+    screens: {
       ...screens
     },
     extend: {

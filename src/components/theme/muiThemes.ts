@@ -1,95 +1,122 @@
+import { createTheme, Theme } from '@mui/material/styles';
+import spacingTokens from './deisgn-tokens/spacing';
+import colors from './deisgn-tokens/colors';
 
-import { createTheme } from '@mui/material/styles';
-import { tokens } from './tokens';
+const baseTheme = {
+  spacing: (factor: number) => {
+    switch (factor) {
+      case 0: return `${spacingTokens.spaceXs.value}rem`;
+      case 1: return `${spacingTokens.spaceS.value}rem`;
+      case 2: return `${spacingTokens.spaceM.value}rem`;
+      case 3: return `${spacingTokens.spaceL.value}rem`;
+      case 4: return `${spacingTokens.spaceXl.value}rem`;
+      case 5: return `${spacingTokens.spaceXxl.value}rem`;
+      case 6: return `${spacingTokens.space3xl.value}rem`;
+      default: return `${spacingTokens.spaceM.value}rem`; // Default case
+    }
+  },
+};
 
-const createMuiTheme = (mode, colors) => createTheme({
+const lightTheme: Theme = createTheme({
+  ...baseTheme,
   palette: {
-    mode,
     primary: {
-      main: colors.primary,
-      light: colors.primaryLight,
+      main: colors.primary.value,
+      light: colors.primary_light.value,
     },
     secondary: {
-      main: colors.secondary,
-      light: colors.secondaryLight,
+      main: colors.warning.value,
     },
     error: {
-      main: colors.error,
-    },
-    warning: {
-      main: colors.warning,
-    },
-    info: {
-      main: colors.info,
+      main: colors.error.value,
     },
     background: {
-      default: colors.background,
-      paper: colors.backgroundSecondary,
+      default: colors.white.value,
+      paper: colors.white_dark.value,
     },
     text: {
-      primary: colors.foreground,
-      secondary: colors.foregroundSecondary,
-    },
-  },
-  spacing: (factor: number) => `${factor * 4}px`,
-  breakpoints: {
-    values: {
-      xs: 0,
-      sm: parseInt(tokens.screens.sm.value, 10),
-      md: parseInt(tokens.screens.md.value, 10),
-      lg: parseInt(tokens.screens.lg.value, 10),
-      xl: parseInt(tokens.screens.xl.value, 10),
+      primary: colors.black.value,
+      secondary: colors.black_light.value,
     },
   },
 });
 
-const muiTheme = {
-  light: createMuiTheme('light', {
-    primary: tokens.color.primary.value,
-    primaryLight: tokens.color.primary_light.value,
-    secondary: tokens.color.black.value,
-    secondaryLight: tokens.color.black_light.value,
-    error: tokens.color.error.value,
-    warning: tokens.color.warning.value,
-    info: tokens.color.info.value,
-    background: tokens.color.white.value,
-    backgroundSecondary: tokens.color.white_dark.value,
-    foreground: tokens.color.black.value,
-    foregroundSecondary: tokens.color.white_dark.value,
-  }),
-  dark: createMuiTheme('dark', {
-    primary: tokens.color.primary.value,
-    primaryLight: tokens.color.primary_light.value,
-    secondary: tokens.color.black.value,
-    secondaryLight: tokens.color.black_light.value,
-    error: tokens.color.error.value,
-    warning: tokens.color.warning.value,
-    info: tokens.color.info.value,
-    background: tokens.color.black.value,
-    backgroundSecondary: tokens.color.black_light.value,
-    foreground: tokens.color.white.value,
-    foregroundSecondary: tokens.color.white_dark.value,
-  }),
-  emerald: createMuiTheme('light', {
-    primary: tokens.color.primary.value,
-    primaryLight: tokens.color.primary_light.value,
-    error: tokens.color.error.value,
-    warning: tokens.color.warning.value,
-    info: tokens.color.info.value,
-    foreground: tokens.color.black.value,
-    foregroundSecondary: tokens.color.white.value,
-  }),
-  pink: createMuiTheme('light', {
-    primary: tokens.color.primary.value,
-    primaryLight: tokens.color.primary_light.value,
-    error: tokens.color.error.value,
-    warning: tokens.color.warning.value,
-    info: tokens.color.info.value,
-    foreground: tokens.color.black.value,
-    foregroundSecondary: tokens.color.white.value,
-  }),
+const darkTheme: Theme = createTheme({
+  ...baseTheme,
+  palette: {
+    primary: {
+      main: colors.primary.value,
+      light: colors.primary_light.value,
+    },
+    secondary: {
+      main: colors.warning.value,
+    },
+    error: {
+      main: colors.error.value,
+    },
+    background: {
+      default: colors.black_light.value,
+      paper: colors.primary.value,
+    },
+    text: {
+      primary: colors.white.value,
+      secondary: colors.primary_light.value,
+    },
+  },
+});
+
+const emeraldTheme: Theme = createTheme({
+  ...baseTheme,
+  palette: {
+    primary: {
+      main: colors.primary.value,
+      light: colors.primary_light.value,
+    },
+    secondary: {
+      main: colors.warning.value,
+    },
+    error: {
+      main: colors.error.value,
+    },
+    background: {
+      default: colors.primary_light.value,
+      paper: colors.primary.value,
+    },
+    text: {
+      primary: colors.black.value,
+      secondary: colors.black_light.value,
+    },
+  },
+});
+
+const pinkTheme: Theme = createTheme({
+  ...baseTheme,
+  palette: {
+    primary: {
+      main: colors.error.value,
+      light: colors.primary_light.value,
+    },
+    secondary: {
+      main: colors.warning.value,
+    },
+    error: {
+      main: colors.error.value,
+    },
+    background: {
+      default: colors.error.value,
+      paper: colors.warning.value,
+    },
+    text: {
+      primary: colors.black.value,
+      secondary: colors.black_light.value,
+    },
+  },
+});
+
+export const muiThemes = {
+  light: lightTheme,
+  dark: darkTheme,
+  emerald: emeraldTheme,
+  pink: pinkTheme,
 };
-
-
-
-export default muiTheme;
+export default muiThemes;
