@@ -1,6 +1,7 @@
 
 const kebabcase = require('lodash.kebabcase');
-const tokens = require('./src/components/theme/tokens');
+//const tokens = require('./src/components/theme/tokens');
+import { tokens } from './src/components/theme/tokens';
 import type { Config } from "tailwindcss";
 
 const transformTokens = (tokenObject: Record<string, any>, category: string) => {

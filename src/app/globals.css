@@ -54,7 +54,7 @@
   :root {
     --background: theme(colors.primary-light); /* Assuming you have a primary-light color token */
     --background-secondary: theme(colors.primary-light);
-    --foreground: theme(colors.black);
+    /* --foreground: ('colors.gray.700'); */
     --primary-dark: theme(colors.black);
     --primary-medium: theme(colors.black-light);
     --primary-light: theme(colors.white-dark);
