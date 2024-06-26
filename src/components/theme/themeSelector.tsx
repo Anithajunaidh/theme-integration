@@ -1,21 +1,3 @@
-// "use client"
-// import { useTheme } from "next-themes"
-// function ThemeSwitcher() {
-//   const { setTheme, theme } = useTheme();
-
-//   const handleThemeChange = (newTheme: string) => {
-//     setTheme(newTheme);
-//   };
-
-//   return (
-//     <div>
-//       <button onClick={() => handleThemeChange('swiss')}>swiss</button>
-//       <button onClick={() => handleThemeChange('neon')}>neon</button>
-//       <button onClick={() => handleThemeChange('system')}>System</button>
-//     </div>
-//   );
-// }
-// export default ThemeSwitcher;
 "use client";
 
 import { useEffect, useState } from 'react';

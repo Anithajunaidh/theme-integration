@@ -3,6 +3,8 @@ import { Urbanist } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from 'next-themes';
 import ThemeChanger from "@/components/theme/themeSelector";
+import useMuiTheme from "@/components/theme/useMuiTheme";
+import CustomThemeProvider from "@/components/theme/customThemeProvider";
 
 const urbanist = Urbanist({ subsets: ["latin"] });
 
@@ -17,13 +19,15 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-   <html>
+    <html>
       <body className={urbanist.className}>
         <ThemeProvider>
-        <ThemeChanger />
-        {children}
+          <CustomThemeProvider>
+            <ThemeChanger />
+            {children}
+          </CustomThemeProvider>
         </ThemeProvider>
-        </body>
+      </body>
     </html>
   );
 }
